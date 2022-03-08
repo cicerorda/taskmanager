@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="criar_nova_tarefa">criar nova tarefa</string>
+    <string name="tarefas">Tarefas</string>
+    <string name="label_new_task">Criar Tarefa</string>
+    <string name="label_title">Título</string>
+    <string name="label_date">Data</string>
+    <string name="label_hora">Hora</string>
+    <string name="label_cancel">Cancelar</string>
+</resources>
