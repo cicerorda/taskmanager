@@ -4,26 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <TextView
 
         android:id="@+id/tv_title"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tarefas"
+        android:text="@string/label_tasks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="24sp"
+        android:textSize="32sp"
         android:textColor="@color/black"
         app:layout_constraintVertical_bias="0.066" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/fab"
         android:text="@string/criar_nova_tarefa"
         android:textSize="24sp"
         app:srcCompat="@drawable/ic_add"
@@ -33,7 +35,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.911"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/label_description_new_task" />
+
+        <include
+            android:id="@+id/include_empty"
+            layout="@layout/empty_state"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tasks"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            android:layout_marginTop="16dp"
+            tools:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/fab"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_task"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
